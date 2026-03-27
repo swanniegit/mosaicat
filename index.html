@@ -3,416 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mosaic Accounting and Taxation - Professional accounting and tax services in South Africa. Chartered Accountants serving clients nationwide.">
     <title>Mosaic Accounting and Taxation</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #2C3E50;
-            --teal-dark: #2D7A7A;
-            --teal: #3D9A9A;
-            --teal-light: #5CBFB3;
-            --teal-pale: #E8F5F3;
-            --white: #FFFFFF;
-            --gray-light: #F8F9FA;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--navy);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: var(--white);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 60px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--teal);
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
-            padding: 10rem 5% 6rem;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--white);
-            color: var(--teal-dark);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        /* Services */
-        .services {
-            padding: 5rem 5%;
-            background: var(--white);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title .underline {
-            width: 60px;
-            height: 4px;
-            background: var(--teal);
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--gray-light);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--teal-dark), var(--teal-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--navy);
-        }
-
-        .service-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* About / Director */
-        .about {
-            padding: 5rem 5%;
-            background: var(--teal-pale);
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .director-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
-
-        .director-card h3 {
-            font-size: 1.8rem;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .director-card .title {
-            color: var(--teal-dark);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .credentials {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-            padding: 1.5rem 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .credential {
-            font-size: 0.9rem;
-        }
-
-        .credential strong {
-            color: var(--teal-dark);
-        }
-
-        /* Contact */
-        .contact {
-            padding: 5rem 5%;
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .contact .section-title h2 {
-            color: var(--white);
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-item .icon {
-            width: 50px;
-            height: 50px;
-            background: var(--teal);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-        }
-
-        .contact-item a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--teal-light);
-        }
-
-        /* Footer */
-        footer {
-            background: #1a252f;
-            color: #aaa;
-            text-align: center;
-            padding: 2rem 5%;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--teal-light);
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .credentials {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__content">
+            <a href="#" class="header__logo">
                 <img src="image001.jpg" alt="Mosaic Accounting and Taxation">
-            </div>
-            <nav>
+            </a>
+            <nav class="nav">
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-        <h1>Your Financial Mosaic, Perfectly Pieced Together</h1>
-        <p>Professional accounting and taxation services tailored to your unique business needs</p>
+        <h1 class="hero__title">Your Financial Mosaic, Perfectly Pieced Together</h1>
+        <p class="hero__subtitle">Professional accounting and taxation services tailored to your unique business needs</p>
         <a href="#contact" class="btn">Get in Touch</a>
     </section>
 
-    <section id="services" class="services">
+    <!-- Services -->
+    <section id="services" class="section section--white">
         <div class="section-title">
             <h2>Our Services</h2>
-            <div class="underline"></div>
+            <div class="section-title__underline"></div>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">&#128200;</div>
-                <h3>Accounting</h3>
-                <p>Comprehensive bookkeeping, financial statements, and management accounts to keep your business on track.</p>
+        <div class="grid grid--services">
+            <div class="card">
+                <div class="card__icon">&#128200;</div>
+                <h3 class="card__title">Accounting</h3>
+                <p class="card__text">Comprehensive bookkeeping, financial statements, and management accounts to keep your business on track.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">&#128221;</div>
-                <h3>Tax Services</h3>
-                <p>Expert tax planning, returns, and compliance for individuals and businesses. SARS registered practitioner.</p>
+            <div class="card">
+                <div class="card__icon">&#128221;</div>
+                <h3 class="card__title">Tax Services</h3>
+                <p class="card__text">Expert tax planning, returns, and compliance for individuals and businesses. SARS registered practitioner.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">&#128188;</div>
-                <h3>Business Advisory</h3>
-                <p>Strategic financial guidance to help your business grow and achieve its goals.</p>
+            <div class="card">
+                <div class="card__icon">&#128188;</div>
+                <h3 class="card__title">Business Advisory</h3>
+                <p class="card__text">Strategic financial guidance to help your business grow and achieve its goals.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">&#128203;</div>
-                <h3>Compliance</h3>
-                <p>CIPC annual returns, B-BBEE certificates, and regulatory compliance services.</p>
+            <div class="card">
+                <div class="card__icon">&#128203;</div>
+                <h3 class="card__title">Compliance</h3>
+                <p class="card__text">CIPC annual returns, B-BBEE certificates, and regulatory compliance services.</p>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- Industries -->
+    <section id="industries" class="section section--pale">
         <div class="section-title">
-            <h2>Meet Our Director</h2>
-            <div class="underline"></div>
+            <h2>Industries We Serve</h2>
+            <div class="section-title__underline"></div>
         </div>
-        <div class="about-content">
-            <div class="director-card">
-                <h3>Jade Grobler</h3>
-                <p class="title">Director</p>
-                <p>Chartered Financial Administrator and Tax Practitioner</p>
-                <div class="credentials">
-                    <div class="credential">
-                        <strong>CIBA:</strong> 2025080-1637
+        <div class="industries-grid">
+            <span class="industry-tag">Small Businesses</span>
+            <span class="industry-tag">Freelancers</span>
+            <span class="industry-tag">Contractors</span>
+            <span class="industry-tag">Trusts</span>
+            <span class="industry-tag">Deceased Estates</span>
+            <span class="industry-tag">Divorce Settlements</span>
+            <span class="industry-tag">All Sectors</span>
+        </div>
+    </section>
+
+    <!-- About / Team -->
+    <section id="about" class="section section--white">
+        <div class="section-title">
+            <h2>Meet Our Team</h2>
+            <div class="section-title__underline"></div>
+        </div>
+        <div class="container container--narrow text-center">
+            <div class="grid grid--team">
+                <div class="card card--white">
+                    <h3 class="card__title">Jadé Grobler</h3>
+                    <p class="card__subtitle" style="color: var(--color-teal-dark); font-weight: 600; margin-bottom: 1rem;">Director</p>
+                    <p>Chartered Financial Administrator and Tax Practitioner</p>
+                    <div class="credentials">
+                        <div class="credentials__item">
+                            <strong>CIBA:</strong> 2025080-1637
+                        </div>
+                        <div class="credentials__item">
+                            <strong>Tax Practitioner:</strong> PR-0122022
+                        </div>
                     </div>
-                    <div class="credential">
-                        <strong>Tax Practitioner:</strong> PR-0122022
+                    <p class="card__bio">I am a Chartered Financial Administrator and registered Tax Practitioner with over five years' experience in accounting, taxation, and audit, supported by SAICA training and my CIBA membership, as well as a legal background through my LL.B (cum laude). My experience spans financial statements, tax compliance for individuals, companies and trusts, contract drafting, and the administration of trusts and deceased estates. I particularly enjoy the problem-solving aspect of accounting, where I can take complex financial and legal matters and translate them into clear, practical outcomes that add real value to my clients.</p>
+                </div>
+                <div class="card card--white">
+                    <h3 class="card__title">Leani Venter</h3>
+                    <p class="card__subtitle" style="color: var(--color-teal-dark); font-weight: 600; margin-bottom: 1rem;">Director</p>
+                    <p>Chartered Accountant (SA) and Tax Practitioner</p>
+                    <div class="credentials">
+                        <div class="credentials__item">
+                            <strong>SAICA:</strong> 20053224
+                        </div>
+                        <div class="credentials__item">
+                            <strong>Tax Practitioner:</strong> PR-0096797
+                        </div>
+                    </div>
+                    <p class="card__bio">I obtained my BAccounting degree, BCom Honours in Management Accounting and BAccounting Honours from the University of Stellenbosch. After completing my audit articles, I was admitted as a Chartered Accountant (SA) with SAICA in 2021. I subsequently held the role of Technical Assurance Manager, remaining actively engaged with developments in the audit and financial reporting landscape. While completing my articles, I met my business partner Jadé, and our shared commitment to continuous learning and strong work ethic led us to establish Mosaic Accounting and Taxation together.</p>
+                </div>
+            </div>
+            <div class="professional-logos">
+                <img src="CIBA logo.jpg" alt="CIBA - Chartered Institute for Business Accountants">
+                <img src="SAICA logo.jpg" alt="SAICA - South African Institute of Chartered Accountants">
+                <img src="SAIT logo.jpg" alt="SAIT - South African Institute of Taxation">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--gray">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <div class="section-title__underline"></div>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">When are tax returns due in South Africa?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <ul>
+                            <li><strong>Individuals (non-provisional taxpayers):</strong> Usually July – October</li>
+                            <li><strong>Provisional taxpayers:</strong> 1st return: 31 August | 2nd return: End of February | 3rd/top-up (if needed): September</li>
+                            <li><strong>Companies:</strong> Within 12 months after financial year-end</li>
+                        </ul>
+                        <p>Exact dates change annually when SARS announces the filing season.</p>
                     </div>
                 </div>
-                <p>Dedicated to providing personalised financial solutions with integrity and precision.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What documents do I need to submit my tax return?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <ul>
+                            <li>IRP5/IT3(a) from your employer</li>
+                            <li>Medical aid tax certificate</li>
+                            <li>Retirement annuity contribution certificate</li>
+                            <li>Travel logbook (if claiming travel expenses)</li>
+                            <li>IT3(b) for investment income</li>
+                            <li>Proof of other income (rental, freelance, side business)</li>
+                            <li>Supporting documents for deductions (donations, home office, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to submit supporting documents to SARS?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>Not always. In most cases, you don't upload documents immediately — SARS may request verification later. You must keep records for at least 5 years.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What happens if I miss the tax deadline?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>You may face:</p>
+                        <ul>
+                            <li>Administrative penalties (monthly fines)</li>
+                            <li>Interest on outstanding tax</li>
+                            <li>Possible non-compliance status</li>
+                        </ul>
+                        <p>It's always better to file late than not at all.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Who qualifies as a provisional taxpayer?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>You are a provisional taxpayer if you earn income other than a salary, such as:</p>
+                        <ul>
+                            <li>Freelancers / consultants</li>
+                            <li>Rental income earners</li>
+                            <li>Business owners</li>
+                            <li>Commission earners</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is auto-assessment from SARS?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>SARS may issue an auto-assessment based on third-party data. If it's correct, accept it. If incorrect, edit and resubmit your return.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I claim deductions to reduce my tax?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>Yes, depending on your situation. Common deductions include:</p>
+                        <ul>
+                            <li>Retirement annuities</li>
+                            <li>Medical expenses (above thresholds)</li>
+                            <li>Travel expenses (if applicable)</li>
+                            <li>Home office (strict criteria)</li>
+                            <li>Donations to approved PBOs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does a refund take?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>Typically 3–7 working days. Delays can happen if verification is required or banking details need confirmation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to submit a tax return if I earn below the threshold?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <p>Not always. You may not need to file if you earn below the annual threshold, have only one employer, and no additional income or deductions. But it's always best to confirm — many people still benefit from submitting.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I make tax season easier?</div>
+                <div class="faq-answer">
+                    <div class="faq-answer__content">
+                        <ul>
+                            <li>Keep documents monthly</li>
+                            <li>Use cloud accounting software</li>
+                            <li>Separate business and personal finances</li>
+                            <li>Work with a registered tax practitioner</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="section-title">
+    <!-- Contact -->
+    <section id="contact" class="section section--dark">
+        <div class="section-title section-title--light">
             <h2>Contact Us</h2>
-            <div class="underline"></div>
+            <div class="section-title__underline"></div>
         </div>
         <div class="contact-content">
             <p>Ready to piece together your financial success? Get in touch today.</p>
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="icon">&#128222;</div>
+                    <div class="contact-item__icon">&#128222;</div>
                     <div>
-                        <a href="tel:+27832553433">+27 83 255 3433</a>
+                        <a href="tel:+27832553433">Jadé: +27 83 255 3433</a>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="icon">&#9993;</div>
+                    <div class="contact-item__icon">&#128222;</div>
+                    <div>
+                        <a href="tel:+27823271353">Leani: +27 82 327 1353</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item__icon">&#9993;</div>
                     <div>
                         <a href="mailto:jade@mosaicat.co.za">jade@mosaicat.co.za</a>
                     </div>
                 </div>
             </div>
+
+            <a href="mailto:jade@mosaicat.co.za?subject=Enquiry%20from%20Website" class="btn btn--primary" style="margin-top: 2rem;">Send us an Email</a>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61580787609870" target="_blank" class="social-link" title="Follow us on Facebook">
+                    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+
+            <div class="contact-address">
+                <p><strong>&#128205; Address:</strong> 44 Templier Street, Hoog-en-Droog, Paarl, Western Cape, 7646</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">100% online — serving clients anywhere in South Africa</p>
+            </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <p>&copy; 2025 Mosaic Accounting and Taxation. All rights reserved.</p>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-dropdown">
+            <a href="https://wa.me/27832553433" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>Jadé Grobler</span>
+            </a>
+            <a href="https://wa.me/27823271353" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>Leani Venter</span>
+            </a>
+        </div>
+        <a class="whatsapp-btn" href="https://wa.me/27832553433" target="_blank" title="WhatsApp us">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>

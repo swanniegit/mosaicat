@@ -1,0 +1,662 @@
+/* ==========================================================================
+   Mosaic Accounting & Taxation - Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Variables (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Colors */
+    --color-navy: #2C3E50;
+    --color-teal-dark: #2D7A7A;
+    --color-teal: #3D9A9A;
+    --color-teal-light: #5CBFB3;
+    --color-teal-pale: #E8F5F3;
+    --color-white: #FFFFFF;
+    --color-gray-light: #F8F9FA;
+    --color-gray: #666666;
+    --color-footer: #1a252f;
+    --color-whatsapp: #25D366;
+
+    /* Typography */
+    --font-family: 'Montserrat', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-section: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+    --radius-full: 50px;
+    --radius-circle: 50%;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+    --shadow-md: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-xl: 0 10px 40px rgba(0,0,0,0.1);
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+
+    /* Layout */
+    --max-width: 1200px;
+    --max-width-narrow: 900px;
+    --max-width-form: 500px;
+}
+
+/* --------------------------------------------------------------------------
+   Base Styles
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-navy);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.container--narrow {
+    max-width: var(--max-width-narrow);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Components: Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-white);
+    color: var(--color-teal-dark);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn--primary {
+    background: var(--color-teal);
+    color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Components: Section Title
+   -------------------------------------------------------------------------- */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--color-navy);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-title--light h2 {
+    color: var(--color-white);
+}
+
+.section-title__underline {
+    width: 60px;
+    height: 4px;
+    background: var(--color-teal);
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Components: Cards
+   -------------------------------------------------------------------------- */
+.card {
+    background: var(--color-gray-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card--white {
+    background: var(--color-white);
+    padding: var(--spacing-lg) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.card__icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--color-teal-dark), var(--color-teal-light));
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    font-size: 1.8rem;
+}
+
+.card__title {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-navy);
+}
+
+.card__text {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+}
+
+.card__bio {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+    margin-top: var(--spacing-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Components: Industry Tags
+   -------------------------------------------------------------------------- */
+.industries-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.industry-tag {
+    background: var(--color-white);
+    color: var(--color-navy);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.industry-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-teal);
+    color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Components: Credentials
+   -------------------------------------------------------------------------- */
+.credentials {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.credentials__item {
+    font-size: 0.9rem;
+}
+
+.credentials__item strong {
+    color: var(--color-teal-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: Header
+   -------------------------------------------------------------------------- */
+.header {
+    background: var(--color-white);
+    padding: var(--spacing-sm) 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.header__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    text-decoration: none;
+}
+
+.header__logo img {
+    height: 60px;
+    transition: opacity var(--transition-fast);
+}
+
+.header__logo:hover img {
+    opacity: 0.8;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-navy);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+.nav a:hover {
+    color: var(--color-teal);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: Hero
+   -------------------------------------------------------------------------- */
+.hero {
+    background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
+    padding: 10rem 5% 6rem;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.hero__title {
+    font-size: 2.8rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero__subtitle {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: Sections
+   -------------------------------------------------------------------------- */
+.section {
+    padding: var(--spacing-section) 5%;
+}
+
+.section--white {
+    background: var(--color-white);
+}
+
+.section--pale {
+    background: var(--color-teal-pale);
+}
+
+.section--gray {
+    background: var(--color-gray-light);
+}
+
+.section--dark {
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: Grids
+   -------------------------------------------------------------------------- */
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.grid--services {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--team {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1000px;
+    margin-top: var(--spacing-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Section: About - Professional Logos
+   -------------------------------------------------------------------------- */
+.professional-logos {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid #ddd;
+}
+
+.professional-logos img {
+    height: 60px;
+    opacity: 0.9;
+    transition: opacity var(--transition-fast);
+}
+
+.professional-logos img:hover {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Section: FAQ
+   -------------------------------------------------------------------------- */
+.faq-container {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+    padding: var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-navy);
+    transition: background var(--transition-fast);
+}
+
+.faq-question:hover {
+    background: var(--color-teal-pale);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--color-teal);
+    transition: transform var(--transition-fast);
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-fast);
+}
+
+.faq-answer__content {
+    padding: 0 var(--spacing-md) var(--spacing-md);
+    color: var(--color-gray);
+    line-height: 1.8;
+}
+
+.faq-answer__content ul {
+    margin: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
+}
+
+.faq-answer__content li {
+    margin-bottom: 0.3rem;
+}
+
+/* --------------------------------------------------------------------------
+   Section: Contact
+   -------------------------------------------------------------------------- */
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.contact-item__icon {
+    width: 50px;
+    height: 50px;
+    background: var(--color-teal);
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.contact-item a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contact-item a:hover {
+    color: var(--color-teal-light);
+}
+
+.contact-address {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-address p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: var(--color-teal);
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-link:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-3px);
+}
+
+.social-link svg {
+    fill: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Layout: Footer
+   -------------------------------------------------------------------------- */
+.footer {
+    background: var(--color-footer);
+    color: #aaa;
+    text-align: center;
+    padding: var(--spacing-lg) 5%;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--color-teal-light);
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Components: WhatsApp Button
+   -------------------------------------------------------------------------- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--color-whatsapp);
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-dropdown {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+    min-width: 220px;
+}
+
+.whatsapp-float:hover .whatsapp-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.whatsapp-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: background var(--transition-fast);
+    font-size: 0.9rem;
+}
+
+.whatsapp-dropdown a:hover {
+    background: var(--color-teal-pale);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Tablet & Mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .nav ul {
+        gap: var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+
+    .credentials {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid--team {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .professional-logos {
+        gap: var(--spacing-sm);
+    }
+
+    .professional-logos img {
+        height: 45px;
+    }
+
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 1.2rem;
+    }
+}
